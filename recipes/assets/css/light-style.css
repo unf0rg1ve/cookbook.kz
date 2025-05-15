@@ -1,0 +1,1487 @@
+/* Импорт шрифта Roboto из локальных файлов */
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Regular.ttf") format("truetype"),
+    url("../fonts/Roboto-Bold.ttf") format("truetype");
+  font-weight: normal;
+}
+
+/* Сброс отступов и установка глобальных параметров для всех элементов */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Roboto;
+}
+
+/* Установка ширины и отключение горизонтального скролла */
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+  font-size: clamp(14px, 1.1vw, 18px);
+}
+
+/* Светлая тема: белый фон и чёрный текст */
+body {
+  color: #000;
+  background-color: white;
+}
+
+/* Шапка сайта: горизонтальный флекс, отступы и фиксированная высота */
+header {
+  background: rgba(255, 255, 255);
+  display: flex;
+  align-items: center;
+  padding: 20px 50px;
+  position: relative;
+  width: 100%;
+  height: 60px;
+  z-index: 2;
+}
+
+/* Ссылка-логотип без подчёркивания */
+#mainlogo {
+  text-decoration: none;
+  color: #000;
+}
+
+/* Контейнер логотипа и текста */
+#logo {
+  display: flex;
+  align-items: center;
+  transition: 0.5s;
+}
+
+/* Анимация увеличения при наведении на логотип */
+#logo:hover {
+  transform: scale(1.05);
+  transition: 0.3s ease;
+}
+
+/* Картинка логотипа */
+#logo img {
+  width: 40px;
+  margin-right: 10px;
+}
+
+/* Надпись рядом с логотипом */
+#logo span {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Кнопка бургер-меню, скрыта по умолчанию */
+#burger-menu {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #000;
+  margin-left: auto;
+  font-weight: bolder;
+}
+
+/* Основная навигация — по центру */
+nav {
+  position: absolute;
+  left: 65%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+}
+
+/* Ссылки в навигации */
+nav a {
+  margin: 0 10px;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  background-color: #ffaa20;
+  color: black;
+  transition: 0.3s;
+}
+
+/* Эффект при наведении на ссылки навигации */
+nav a:hover {
+  background-color: #cc8819;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  color: rgb(50, 50, 50);
+}
+
+/* Контейнер управления (поиск и кнопка смены темы) */
+#header-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 10vw;
+}
+
+/* Поле поиска */
+#search-field {
+  padding-left: 35px;
+  border-radius: 20px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+/* Фокус на поле поиска */
+#search-field:focus {
+  border-color: #ffaa20;
+}
+
+/* Кнопка переключения темы */
+#toggle-theme {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 20px;
+  background-color: #5a5a5a;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+/* Эффект при наведении на кнопку темы */
+#toggle-theme:hover {
+  background-color: #000;
+}
+
+/* Секция баннера */
+section.banner {
+  position: relative;
+  overflow: hidden;
+  background-color: transparent; /* фон убираем, он будет через before */
+}
+
+/* Псевдоэлемент с фоновым изображением */
+section.banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/banner-bg.webp'); /* замени на путь к изображению */
+  background-size: cover;
+  background-position: center;
+  filter: blur(5px) brightness(0.6); /* размытие + затемнение */
+  z-index: 0;
+}
+
+section.banner,
+section.banner h1,
+section.banner p {
+  color: #fff !important;
+}
+
+/* Контент поверх — помещаем выше фона */
+section.banner > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Карточки с рецептами */
+.recipe-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.recipe-card:hover {
+  background-color: #e2e2e2;
+}
+
+.recipe-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+.recipe-title {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Секция подвала */
+footer {
+  background-color: #5c5c5c;
+  color: white;
+  padding: 20px 0;
+}
+
+/* Список навигации */
+.nav-list {
+  text-decoration: none;
+  list-style: none;
+  padding-left: 0;
+}
+
+/* Расположение элементов списка навигации */
+.nav-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+/* Цвет и размер красивых иконок элементов списка */
+.nav-list i {
+  color: #ff9800;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+/* Цвет и размер текста элементов списка */
+.nav-list a {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav-list a,
+.nav-list a:hover {
+  text-decoration: none !important;
+}
+
+.nav-list a:hover,
+.nav-list i:hover {
+  color: #ffd54f;
+}
+
+/* Блок с иконками соцсетей */
+#social-networks {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Расстояние между иконками соцсетей */
+.socnet {
+  margin: 30px;
+}
+
+/* Размер иконок соцсетей */
+.sn-image {
+  max-width: 80px;
+  transition: transform 0.3s ease;
+}
+
+.sn-image:hover {
+  transform: scale(1.2);
+}
+
+/* Размер и расположение элементов в подвале */
+.footer-box {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* Размеры секций подвала */
+.left-section,
+.right-section {
+  width: 48%;
+}
+
+/* Удаление отступов в тексте левой секции */
+.left-section p {
+  margin: 0;
+}
+
+/* Цвет ссылки политики конфидециальности */
+.left-section a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.left-section a:hover {
+  text-decoration: underline;
+}
+
+/* Заголовок для формы обратной связи */
+.right-section h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+/* Заголовки для полей формы */
+#contactForm label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* Ширина и граница для полей ввода */
+#contactForm input,
+#contactForm textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Кнопка для отправки формы */
+#contactForm button {
+  background: 0;
+  color: white;
+  border: 1px white solid;
+  border-radius: 30px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#contactForm button:hover {
+  background-color: #f2f2f2;
+  color: #000;
+}
+
+/* Размеры поля для ввода сообщения */
+#contactForm textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Адаптация для экранов с поддержкой 2К */
+@media (min-width: 1920px) and (max-width: 2648px) {
+  header {
+    height: 150px;
+  }
+
+  #logo img {
+    width: 90px;
+  }
+
+  #logo span {
+    font-size: 54px;
+  }
+
+  nav a {
+    height: 75px;
+    font-size: 34px;
+    margin: 0 30px;
+    border-radius: 15px;
+    padding: 15px 16px;
+  }
+
+  #header-controls {
+    margin-left: 3vw;
+  }
+
+  #search-field {
+    padding: 5px 10px;
+    font-size: 44px;
+    border-radius: 35px;
+  }
+
+  #toggle-theme {
+    padding: 5px 10px;
+    font-size: 46px;
+    border-radius: 35px;
+  }
+
+  .nav-list {
+    padding-left: 0;
+    margin-top: 50px;
+  }
+
+  .nav-list li {
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+
+  .nav-list i {
+    font-size: 48px;
+  }
+
+  .nav-list a {
+    font-size: 48px;
+  }
+
+  .socnet {
+    margin: 40px;
+  }
+
+  .sn-image {
+    max-width: 160px;
+  }
+
+  #footer-info {
+    font-size: 45px;
+  }
+
+  .footer-box {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .left-section,
+  .right-section {
+    width: 48%;
+  }
+
+  .left-section p {
+    margin: 0;
+  }
+
+  .left-section a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .right-section h2 {
+    margin-top: 0;
+    margin-bottom: 40px;
+    font-size: 48px;
+  }
+
+  #contactForm label {
+    margin-bottom: 5px;
+    font-size: 36px;
+  }
+
+  #contactForm input,
+  #contactForm textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 45px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+  }
+
+  #contactForm button {
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 45px;
+  }
+
+  #contactForm textarea {
+    resize: vertical;
+    min-height: 300px;
+  }
+
+  #formMessage {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+}
+
+/* Адаптация для ноутбуков */
+@media (min-width: 1024px) and (max-width: 1399px) {
+  header {
+    height: 60px;
+  }
+
+  #logo img {
+    width: 35px;
+  }
+
+  #logo span {
+    font-size: 24px;
+  }
+
+  nav a {
+    height: 35px;
+    font-size: 16px;
+    margin: 0 10px;
+    border-radius: 10px;
+    padding: 7px 10px;
+  }
+
+  #search-field {
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 15px;
+  }
+
+  #toggle-theme {
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 15px;
+  }
+
+  .nav-list {
+    padding-left: 0;
+  }
+
+  .nav-list li {
+    gap: 5px;
+    margin-bottom: 10px;
+  }
+
+  .nav-list i {
+    font-size: 18px;
+  }
+
+  .nav-list a {
+    font-size: 18px;
+  }
+
+  .socnet {
+    margin: 15px;
+  }
+
+  .sn-image {
+    max-width: 70px;
+  }
+
+  #footer-info {
+    font-size: 18px;
+    margin-top: 20px;
+  }
+
+  .footer-box {
+    max-width: 95%;
+    margin: 0 auto;
+  }
+
+  .left-section,
+  .right-section {
+    width: 48%;
+  }
+
+  .left-section p {
+    margin: 0;
+  }
+
+  .right-section h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+
+  #contactForm label {
+    margin-bottom: 5px;
+    font-size: 18px;
+  }
+
+  #contactForm input,
+  #contactForm textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+  }
+
+  #contactForm button {
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  #contactForm textarea {
+    resize: vertical;
+    min-height: 70px;
+  }
+
+  #formMessage {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+}
+
+/* Адаптация для больших планшетов и ноутбуков */
+@media (min-width: 1000px) and (max-width: 1023px) {
+  header {
+    height: 60px;
+    width: 100%;
+  }
+
+  #logo img {
+    width: 35px;
+  }
+
+  #logo span {
+    font-size: 24px;
+  }
+
+  nav a {
+    height: auto;
+    font-size: 24px;
+    margin: 0 10px;
+    border-radius: o;
+    padding: 7px 10px;
+    background: 0;
+  }
+
+  /* Изменение блока с навигацией для отображения его внутри бургер-меню */
+  nav {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+  }
+
+  nav.active {
+    display: flex;
+    transform: translateY(0);
+  }
+
+  /* Делаем кнопку бургер-меню видимой */
+  #burger-menu {
+    display: block;
+  }
+
+  #search-field {
+    padding: 5px 10px;
+    font-size: 24px;
+    border-radius: 15px;
+  }
+
+  #toggle-theme {
+    padding: 5px 10px;
+    font-size: 24px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+  }
+
+  .nav-list {
+    padding-left: 0;
+  }
+
+  .nav-list li {
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .nav-list i {
+    font-size: 26px;
+  }
+
+  .nav-list a {
+    font-size: 26px;
+  }
+
+  .socnet {
+    margin: 30px;
+  }
+
+  .sn-image {
+    max-width: 100px;
+  }
+
+  #footer-info {
+    font-size: 24px;
+    margin-top: 20px;
+  }
+
+  .footer-box {
+    max-width: 95%;
+    margin: 0 auto;
+  }
+
+  .left-section,
+  .right-section {
+    width: 48%;
+  }
+
+  .left-section p {
+    margin: 0;
+  }
+
+  .right-section h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+
+  #contactForm label {
+    margin-bottom: 5px;
+    font-size: 24px;
+  }
+
+  #contactForm input,
+  #contactForm textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    height: auto;
+  }
+
+  #contactForm button {
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 22px;
+  }
+
+  #contactForm textarea {
+    resize: vertical;
+    min-height: 300px;
+  }
+
+  #formMessage {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+}
+
+/* Адаптация для больших планшетов */
+@media (min-width: 870px) and (max-width: 999px) {
+  body {
+    width: 115%;
+  }
+
+  header {
+    height: 70px;
+  }
+
+  #logo img {
+    width: 40px;
+  }
+
+  #logo span {
+    font-size: 26px;
+  }
+
+  nav a {
+    height: auto;
+    font-size: 24px;
+    margin: 0 10px;
+    border-radius: o;
+    padding: 7px 10px;
+    background: 0;
+    margin-bottom: 10px;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+  }
+
+  nav.active {
+    display: flex;
+    transform: translateY(0);
+  }
+
+  #burger-menu {
+    display: block;
+  }
+
+  #search-field {
+    padding: 5px 10px;
+    font-size: 24px;
+    border-radius: 15px;
+  }
+
+  #toggle-theme {
+    padding: 5px 10px;
+    margin-left: 20px;
+    font-size: 24px;
+    border-radius: 15px;
+  }
+
+  .nav-list {
+    padding-left: 0;
+  }
+
+  .nav-list li {
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .nav-list i {
+    font-size: 26px;
+  }
+
+  .nav-list a {
+    font-size: 26px;
+  }
+
+  .socnet {
+    margin: 30px;
+  }
+
+  .sn-image {
+    max-width: 100px;
+  }
+
+  #footer-info {
+    font-size: 24px;
+    margin-top: 20px;
+  }
+
+  .footer-box {
+    max-width: 95%;
+    margin: 0 auto;
+  }
+
+  .left-section,
+  .right-section {
+    width: 48%;
+  }
+
+  .left-section p {
+    margin: 0;
+  }
+
+  .right-section h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+
+  #contactForm label {
+    margin-bottom: 5px;
+    font-size: 24px;
+  }
+
+  #contactForm input,
+  #contactForm textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    height: auto;
+  }
+
+  #contactForm button {
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 22px;
+  }
+
+  #contactForm textarea {
+    resize: vertical;
+    min-height: 300px;
+  }
+
+  #formMessage {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+}
+
+/* Адаптация для планшетов */
+@media (min-width: 768px) and (max-width: 869px) {
+  body {
+    width: 125%;
+  }
+
+  header {
+    height: 80px;
+  }
+
+  #logo img {
+    width: 45px;
+  }
+
+  #logo span {
+    font-size: 30px;
+  }
+
+  nav a {
+    height: auto;
+    font-size: 28px;
+    margin: 0 10px;
+    border-radius: o;
+    padding: 7px 10px;
+    background: 0;
+    margin-bottom: 15px;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+  }
+
+  nav.active {
+    display: flex;
+    transform: translateY(0);
+  }
+
+  #burger-menu {
+    display: block;
+  }
+
+  #search-field {
+    padding: 5px 10px;
+    font-size: 28px;
+    border-radius: 15px;
+  }
+
+  #toggle-theme {
+    padding: 5px 10px;
+    margin-left: 20px;
+    font-size: 28px;
+    border-radius: 15px;
+  }
+
+  .nav-list {
+    padding-left: 0;
+  }
+
+  .nav-list li {
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .nav-list i {
+    font-size: 26px;
+  }
+
+  .nav-list a {
+    font-size: 26px;
+  }
+
+  .socnet {
+    margin: 30px;
+  }
+
+  .sn-image {
+    max-width: 100px;
+  }
+
+  #footer-info {
+    font-size: 24px;
+    margin-top: 20px;
+  }
+
+  .footer-box {
+    max-width: 95%;
+    margin: 0 auto;
+  }
+
+  .left-section,
+  .right-section {
+    width: 48%;
+  }
+
+  .left-section p {
+    margin: 0;
+  }
+
+  .right-section h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+
+  #contactForm label {
+    margin-bottom: 5px;
+    font-size: 24px;
+  }
+
+  #contactForm input,
+  #contactForm textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    height: auto;
+  }
+
+  #contactForm button {
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 22px;
+  }
+
+  #contactForm textarea {
+    resize: vertical;
+    min-height: 300px;
+  }
+
+  #formMessage {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+}
+
+/* Адаптация для небольших планшетов и горизонтальных экранов смартфонов */
+@media (min-width: 640px) and (max-width: 767px) {
+  body {
+    width: 135%;
+  }
+
+  header {
+    height: 100px;
+  }
+
+  #logo img {
+    width: 50px;
+  }
+
+  #logo span {
+    font-size: 28px;
+  }
+
+  nav a {
+    height: 60px;
+    font-size: 28px;
+    margin: 0 10px;
+    border-radius: 0;
+    padding: 10px 10px;
+    background: none;
+  }
+
+  nav a:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    color: rgb(50, 50, 50);
+  }
+
+  #search-field {
+    padding: 5px 10px;
+    font-size: 20px;
+    border-radius: 15px;
+  }
+
+  #toggle-theme {
+    padding: 5px 10px;
+    margin-left: 20px;
+    font-size: 20px;
+    border-radius: 15px;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+  }
+
+  nav.active {
+    display: flex;
+    transform: translateY(0);
+  }
+
+  #burger-menu {
+    display: block;
+  }
+
+  .nav-list {
+    padding-left: 0;
+  }
+
+  .nav-list li {
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .nav-list i {
+    font-size: 26px;
+  }
+
+  .nav-list a {
+    font-size: 26px;
+  }
+
+  .socnet {
+    margin: 30px;
+  }
+
+  .sn-image {
+    max-width: 100px;
+  }
+
+  #footer-info {
+    font-size: 24px;
+    margin-top: 20px;
+  }
+
+  .footer-box {
+    max-width: 95%;
+    margin: 0 auto;
+  }
+
+  .left-section,
+  .right-section {
+    width: 48%;
+  }
+
+  .left-section p {
+    margin: 0;
+  }
+
+  .right-section h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+
+  #contactForm label {
+    margin-bottom: 5px;
+    font-size: 24px;
+  }
+
+  #contactForm input,
+  #contactForm textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    height: auto;
+  }
+
+  #contactForm button {
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 22px;
+  }
+
+  #contactForm textarea {
+    resize: vertical;
+    min-height: 300px;
+  }
+
+  #formMessage {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+}
+
+/* Адаптация для смартофонов с большим экраном */
+@media (min-width: 425px) and (max-width: 639px) {
+  body {
+    width: 125%;
+  }
+
+  header {
+    height: 100px;
+  }
+
+  #logo img {
+    width: 35px;
+  }
+
+  #logo span {
+    font-size: 30px;
+  }
+
+  nav a {
+    height: auto;
+    font-size: 32px;
+    margin: 0 10px;
+    border-radius: o;
+    padding: 7px 10px;
+    background: 0;
+    margin-bottom: 15px;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+  }
+
+  nav.active {
+    display: flex;
+    transform: translateY(0);
+  }
+
+  #burger-menu {
+    display: block;
+    font-size: 30px;
+  }
+
+  #search-field {
+    padding: 5px 10px;
+    font-size: 32px;
+    border-radius: 15px;
+  }
+
+  #toggle-theme {
+    padding: 5px 10px;
+    margin-left: 20px;
+    font-size: 32px;
+    border-radius: 15px;
+  }
+
+  .nav-list {
+    padding-left: 0;
+  }
+
+  .nav-list li {
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .nav-list i {
+    font-size: 26px;
+  }
+
+  .nav-list a {
+    font-size: 26px;
+  }
+
+  .socnet {
+    margin: 30px;
+  }
+
+  .sn-image {
+    max-width: 100px;
+  }
+
+  #footer-info {
+    font-size: 24px;
+    margin-top: 20px;
+  }
+
+  .footer-box {
+    max-width: 95%;
+    margin: 0 auto;
+    flex-direction: column;
+  }
+
+  .left-section,
+  .right-section {
+    width: 100%;
+  }
+
+  .left-section p {
+    margin: 0;
+  }
+
+  .right-section h2 {
+    margin-top: 40px;
+    margin-bottom: 10px;
+    font-size: 22px;
+  }
+
+  #contactForm label {
+    margin-bottom: 5px;
+    font-size: 18px;
+  }
+
+  #contactForm input,
+  #contactForm textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    height: auto;
+  }
+
+  #contactForm button {
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 18px;
+  }
+
+  #contactForm textarea {
+    resize: vertical;
+    min-height: 150px;
+  }
+
+  #formMessage {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+}
+
+/* Адаптация для смартфонов */
+@media (min-width: 320px) and (max-width: 424px) {
+  body {
+    width: 125%;
+  }
+
+  header {
+    height: 100px;
+  }
+
+  #logo img {
+    width: 30px;
+  }
+
+  #logo span {
+    font-size: 25px;
+  }
+
+  nav a {
+    height: auto;
+    font-size: 22px;
+    margin: 0 10px;
+    border-radius: o;
+    padding: 7px 10px;
+    background: 0;
+    margin-bottom: 15px;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+  }
+
+  nav.active {
+    display: flex;
+    transform: translateY(0);
+  }
+
+  #burger-menu {
+    display: block;
+    font-size: 24px;
+  }
+
+  #search-field {
+    padding: 5px 10px;
+    font-size: 20px;
+    border-radius: 15px;
+  }
+
+  #toggle-theme {
+    padding: 5px 10px;
+    margin-left: 10px;
+    font-size: 20px;
+    border-radius: 15px;
+  }
+
+  .nav-list {
+    padding-left: 0;
+  }
+
+  .nav-list li {
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .nav-list i {
+    font-size: 20px;
+  }
+
+  .nav-list a {
+    font-size: 20px;
+  }
+
+  .socnet {
+    margin: 30px;
+  }
+
+  .sn-image {
+    max-width: 80px;
+  }
+
+  #footer-info {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+
+  .footer-box {
+    max-width: 95%;
+    margin: 0 auto;
+    flex-direction: column;
+  }
+
+  .left-section,
+  .right-section {
+    width: 100%;
+  }
+
+  .left-section p {
+    margin: 0;
+  }
+
+  .right-section h2 {
+    margin-top: 40px;
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+
+  #contactForm label {
+    margin-bottom: 5px;
+    font-size: 18px;
+  }
+
+  #contactForm input,
+  #contactForm textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    height: auto;
+  }
+
+  #contactForm button {
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 18px;
+  }
+
+  #contactForm textarea {
+    resize: vertical;
+    min-height: 150px;
+  }
+
+  #formMessage {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+}
