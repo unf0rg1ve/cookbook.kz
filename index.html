@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Правильная адаптивность сайта для мобильных устройств -->
+    <title>COOKBOOK</title>
+    <link id="theme-style" rel="stylesheet" href="assets/css/light-style.css"/> <!-- Подключение основного css светлой темы-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/> <!-- Подключение внешнего css для красивых иконок -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Подключение библиотеки js для отрисовки диаграм  -->
+  </head>
+  <body>
+
+    <!-- Шапка сайта -->
+    <header>
+
+      <!--Блок с логотипом -->
+      <a id="mainlogo" href="index.html">
+        <div id="logo">
+          <img src="assets/images/logo.webp" alt="Логотип" />
+          <span>COOKBOOK</span>
+        </div>
+      </a>
+
+      <button id="burger-menu">&#9776; Меню</button> <!-- Кнопка для бургер меню сайта -->
+
+      <!-- Основное меню навигации сайта -->
+      <nav id="main-nav"> 
+        <a href="recipes/index.html">Рецепты</a>
+        <a href="health/index.html">Здоровье</a>
+        <a href="login/index.html">Войти</a>
+
+        <!-- Элементы управления -->
+        <div id="header-controls"> 
+          <input type="text" id="search-field" placeholder="Поиск..." /> <!-- Поле поиска -->
+          <button id="toggle-theme">&#127769;</button> <!-- Кнопка смены темы -->
+        </div>
+      </nav>
+    </header>
+
+    <!-- Главный баннер сайта -->
+    <section id="hero">  
+      <div id="overlay">
+        <h4>ЛУЧШЕЕ МЕСТО ДЛЯ ЛЮБИТЕЛЕЙ ВКУСНОЙ ЕДЫ</h4>
+        <h1>РЕЦЕПТЫ ДЛЯ ВДОХНОВЕНИЯ</h1>
+        <p>
+          Мы создаем рецепты, которые не только просты в приготовлении, но и
+          дарят настоящий гастрономический восторг. Погрузитесь в мир ароматов и
+          вкусов вместе с нами!
+        </p>
+
+        <!-- Кнопки под баннером -->
+        <div id="hero-buttons"> 
+          <a href="recipes/index.html" id="btn-outline">Перейти к рецептам</a>
+          <a href="login/index.html" id="login">Войти</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Слайдер со статьями о здоровье -->
+    <section id="health-slider"> 
+      <h2 id="health-header">Актуальные статьи о здоровье</h2>
+      <div class="slider-container">
+
+        <!-- Первый слайд -->
+        <div class="slide active">
+          <a href="#" class="slider-card">
+            <img src="assets/images/health1.webp" alt="Статья 1" />
+            <div class="caption">
+              <h3>Свежесть весны в каждом глотке</h3>
+              <p>Готовим вкусные и полезные смузи!</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Второй слайд -->
+        <div class="slide">
+          <a href="#" class="slider-card">
+            <img src="assets/images/health2.webp" alt="Статья 2" />
+            <div class="caption">
+              <h3>Клетчатка: супергерой вашего пищеварения</h3>
+              <p>Узнайте все о пищевых волокнах: зачем они нужны, где их искать, сколько нужно есть в день?</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Третий слайд слайд -->
+        <div class="slide">
+          <a href="#" class="slider-card">
+            <img src="assets/images/health3.webp" alt="Статья 3" />
+            <div class="caption">
+              <h3>Что такое здоровое питание? 4 правила</h3>
+              <p>Здоровое питание – это часть здорового образа жизни.</p>
+            </div>
+          </a>
+        </div>
+        <button class="prev">&#10094;</button><!-- Кнопка перехода на предыдущий слайд -->
+        <button class="next">&#10095;</button><!-- Кнопка перехода на Следующий слайд -->
+      </div>
+
+      <!-- Индикаторы слайдов -->
+      <div class="dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </section>
+
+    <!-- Меню категорий рецептов -->
+    <section id="recipe-menu">
+      <h2>Меню рецептов</h2>
+      <div id="categories">
+
+        <!-- Завтраки -->
+        <div class="category">
+          <img src="assets/images/breakfast.webp" alt="Завтраки" />
+          <h3>Завтраки</h3>
+          <a href="recipes/index.html?category=завтраки" class="btn">Перейти к рецептам</a>
+        </div>
+
+        <!-- Основные блюда -->
+        <div class="category">
+          <img src="assets/images/mainfood.webp" alt="Основные блюда" />
+          <h3>Основные блюда</h3>
+          <a href="recipes/index.html?category=основные" class="btn">Перейти к рецептам</a>
+        </div>
+
+        <!-- Супы -->
+        <div class="category">
+          <img src="assets/images/soup.webp" alt="Супы" />
+          <h3>Супы</h3>
+          <a href="recipes/index.html?category=супы" class="btn">Перейти к рецептам</a>
+        </div>
+
+        <!-- Десерты -->
+        <div class="category">
+          <img src="assets/images/dessert.webp" alt="Десерты" />
+          <h3>Десерты</h3>
+          <a href="recipes/index.html?category=десерты" class="btn">Перейти к рецептам</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Блок с диаграммами -->
+    <section id="diagrams">
+      <h2>Рейтинг популярных рецептов</h2>
+      <div id="diagrams-block">
+        
+        <!-- Круговая диаграмма -->
+        <div id="pie-diagram">
+          <canvas id="pieChart"></canvas>
+        </div>
+
+        <!-- Пузырьковая диаграмма -->
+        <div id="bubble-diagram">
+          <canvas id="bubbleChart"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- Таблица преимуществ -->
+    <section id="advantages" class="advantages-section">
+      <div class="container">
+        <h2>Наши преимущества</h2>
+        <table class="advantages-table">
+          <thead>
+            <tr>
+              <th>Преимущество</th>
+              <th>Описание</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Проверенные рецепты</td>
+              <td>Только проверенные временем блюда от опытных кулинаров</td>
+            </tr>
+            <tr>
+              <td>Пошаговые инструкции</td>
+              <td>
+                Подробные этапы приготовления с пошаговым объяснением
+              </td>
+            </tr>
+            <tr>
+              <td>Быстрая регистрация</td>
+              <td>Простая регистрация за одну минуту без лишних полей</td>
+            </tr>
+            <tr>
+              <td>Адаптивный дизайн</td>
+              <td>Сайт идеально работает на компьютере, планшете и телефоне</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Подвал сайта-->
+    <footer>
+      <div class="footer-box">
+
+        <!-- Левая секция подвала -->
+        <div class="left-section">
+
+          <!-- Меню навигации -->
+          <ul class="nav-list">
+            <li><i class="fa fa-home"></i> <a href="index.html">Главная</a></li>
+            <li>
+              <i class="fa fa-book-open"></i>
+              <a href="recipes/index.html">Рецепты</a>
+            </li>
+            <li>
+              <i class="fa fa-heartbeat"></i
+              ><a href="health/index.html">Здоровье</a>
+            </li>
+            <li>
+              <i class="fa fa-sign-in-alt"></i
+              ><a href="login/index.html">Войти</a>
+            </li>
+          </ul>
+
+          <!-- Соцсети -->
+          <div id="social-networks">
+            <div class="socnet">
+              <a href="error404.html"
+                ><img class="sn-image" src="assets/images/socnet1.webp"
+              /></a>
+            </div>
+            <div class="socnet">
+              <a href="error404.html"
+                ><img class="sn-image" src="assets/images/socnet2.webp"
+              /></a>
+            </div>
+            <div class="socnet">
+              <a href="error404.html"
+                ><img class="sn-image" src="assets/images/socnet3.webp"
+              /></a>
+            </div>
+            <div class="socnet">
+              <a href="error404.html"
+                ><img class="sn-image" src="assets/images/socnet4.webp"
+              /></a>
+            </div>
+          </div>
+
+          <!-- Права и конфидециальность -->
+          <div id="footer-info">
+            <p>&copy; 2025 COOKBOOK<br />Все права защищены.</p>
+            <a href="error404.html">Политика конфиденциальности</a>
+            <p>Обратная связь: cookbook25@mail.ru</p>
+          </div>
+        </div>
+
+        <!-- Правая секция подвала -->
+        <div class="right-section">
+
+          <!-- Форма обратной связи -->
+          <form id="contactForm">
+            <h2>Связаться с нами</h2>
+
+            <label for="name">Имя:</label>
+            <input type="text" id="name" name="name" required />
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+
+            <label for="message">Сообщение:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Отправить</button>
+          </form>
+        </div>
+      </div>
+    </footer>
+    <script src="assets/js/main-script.js"></script> <!-- Подключение скриптов js -->
+  </body>
+</html>

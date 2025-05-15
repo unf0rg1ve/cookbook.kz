@@ -1,0 +1,1439 @@
+/* Импорт шрифта Roboto из локальных файлов */
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Regular.ttf") format("truetype"),
+    url("../fonts/Roboto-Bold.ttf") format("truetype");
+  font-weight: normal;
+}
+/* Сброс базовых параметров */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Roboto;
+}
+
+/* Установка ширины и отключение горизонтального скролла */
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Основной стиль для тёмной темы: тёмный фон и светлый текст */
+body {
+  color: white;
+  background-image: url('../images/bg.webp');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Шапка в тёмной теме */
+header {
+  background: #232323;
+  display: flex;
+  align-items: center;
+  padding: 20px 50px;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+}
+
+/* Цвета и структура логотипа те же, но адаптированы под тёмную тему */
+#mainlogo {
+  text-decoration: none;
+  color: white;
+}
+
+#logo {
+  display: flex;
+  align-items: center;
+  transition: 0.5s;
+}
+
+#logo:hover {
+  transform: scale(1.05);
+  transition: 0.3s ease;
+}
+
+#logo img {
+  width: 40px;
+  margin-right: 10px;
+}
+
+#logo span {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Кнопка бургер-меню */
+#burger-menu {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  margin-left: auto;
+  font-weight: bolder;
+}
+
+/* Навигация */
+nav {
+  position: absolute;
+  left: 65%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  margin: 0 10px;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  background-color: #ffaa20;
+  color: white;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  background-color: #cc8819;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.5);
+  color: rgb(204, 204, 204);
+}
+
+/* Контейнер для поиска и кнопки темы */
+#header-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 10vw;
+}
+
+#search-field {
+  padding: 5px 10px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 14px;
+}
+
+/* Фокус на поле поиска */
+#search-field:focus {
+  border-color: #ffaa20;
+}
+
+#toggle-theme {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 20px;
+  background-color: #9c9c9c;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+#toggle-theme:hover {
+  background-color: white;
+}
+
+.auth-box {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  background-color: rgba(0, 0, 0, 0.9) !important;
+  color: #fff !important;
+}
+
+.text-orange {
+  color: #ffaa20;
+}
+
+.nav-tabs .nav-link.active {
+  background-color: #ffaa20 !important;
+  color: #fff !important;
+  border: 0 !important;
+}
+
+.nav-tabs .nav-link {
+  color: #a5a5a5 !important;
+}
+
+.login-btn {
+  background-color:#00aaff !important;
+  color: #fff !important;
+  border: 0 !important;
+}
+
+.login-btn:hover {
+  background-color: #0075b0 !important;
+}
+
+.register-btn {
+  background-color: #ffaa20 !important;
+  color: #fff !important;
+  border: 0 !important;
+}
+
+.register-btn:hover {
+  background-color: #cc8819 !important;
+}
+
+footer {
+  background-color: #232323;
+  color: white;
+  padding: 20px 0;
+}
+
+.nav-list {
+  text-decoration: none;
+  list-style: none;
+  padding-left: 0;
+}
+
+.nav-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.nav-list i {
+  color: #ff9800;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.nav-list a {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav-list a,
+.nav-list a:hover {
+  text-decoration: none !important;
+}
+
+.nav-list a:hover,
+.nav-list i:hover {
+  color: #ffd54f;
+}
+
+#social-networks {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.socnet {
+  margin: 30px;
+}
+
+.sn-image {
+  max-width: 80px;
+  transition: transform 0.3s ease;
+}
+
+.sn-image:hover {
+  transform: scale(1.2);
+}
+
+.footer-box {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.left-section,
+.right-section {
+  width: 48%;
+}
+
+.left-section p {
+  margin: 0;
+}
+
+.left-section a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.left-section a:hover {
+  text-decoration: underline;
+}
+
+.right-section h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+#contactForm label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+#contactForm input,
+#contactForm textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#contactForm button {
+  background: 0;
+  color: white;
+  border: 1px white solid;
+  border-radius: 30px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#contactForm button:hover {
+  background-color: #f2f2f2;
+  color: #000;
+}
+
+#contactForm textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+#formMessage {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+@media (min-width: 1920px) and (max-width: 2648px) {
+  header {
+    height: 150px;
+  }
+
+  #logo img {
+    width: 90px;
+  }
+
+  #logo span {
+    font-size: 54px;
+  }
+
+  nav a {
+    height: 75px;
+    font-size: 34px;
+    margin: 0 30px;
+    border-radius: 15px;
+    padding: 15px 16px;
+  }
+
+  #header-controls {
+    margin-left: 3vw;
+  }
+
+  #search-field {
+    padding: 5px 10px;
+    font-size: 44px;
+    border-radius: 35px;
+  }
+
+  #toggle-theme {
+    padding: 5px 10px;
+    font-size: 46px;
+    border-radius: 35px;
+  }
+
+  .nav-list {
+    padding-left: 0;
+    margin-top: 50px;
+  }
+
+  .nav-list li {
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+
+  .nav-list i {
+    font-size: 48px;
+  }
+
+  .nav-list a {
+    font-size: 48px;
+  }
+
+  .socnet {
+    margin: 40px;
+  }
+
+  .sn-image {
+    max-width: 160px;
+  }
+
+  #footer-info {
+    font-size: 45px;
+  }
+
+  .footer-box {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .left-section,
+  .right-section {
+    width: 48%;
+  }
+
+  .left-section p {
+    margin: 0;
+  }
+
+  .left-section a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .right-section h2 {
+    margin-top: 0;
+    margin-bottom: 40px;
+    font-size: 48px;
+  }
+
+  #contactForm label {
+    margin-bottom: 5px;
+    font-size: 36px;
+  }
+
+  #contactForm input,
+  #contactForm textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 45px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+  }
+
+  #contactForm button {
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 45px;
+  }
+
+  #contactForm textarea {
+    resize: vertical;
+    min-height: 300px;
+  }
+
+  #formMessage {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1399px) {
+  header {
+    height: 60px;
+  }
+
+  #logo img {
+    width: 35px;
+  }
+
+  #logo span {
+    font-size: 24px;
+  }
+
+  nav a {
+    height: 35px;
+    font-size: 16px;
+    margin: 0 10px;
+    border-radius: 10px;
+    padding: 7px 10px;
+  }
+
+  #search-field {
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 15px;
+  }
+
+  #toggle-theme {
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 15px;
+  }
+  .nav-list {
+    padding-left: 0;
+  }
+
+  .nav-list li {
+    gap: 5px;
+    margin-bottom: 10px;
+  }
+
+  .nav-list i {
+    font-size: 18px;
+  }
+
+  .nav-list a {
+    font-size: 18px;
+  }
+
+  .socnet {
+    margin: 15px;
+  }
+
+  .sn-image {
+    max-width: 70px;
+  }
+
+  #footer-info {
+    font-size: 18px;
+    margin-top: 20px;
+  }
+
+  .footer-box {
+    max-width: 95%;
+    margin: 0 auto;
+  }
+
+  .left-section,
+  .right-section {
+    width: 48%;
+  }
+
+  .left-section p {
+    margin: 0;
+  }
+
+  .right-section h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+
+  #contactForm label {
+    margin-bottom: 5px;
+    font-size: 18px;
+  }
+
+  #contactForm input,
+  #contactForm textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+  }
+
+  #contactForm button {
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  #contactForm textarea {
+    resize: vertical;
+    min-height: 70px;
+  }
+
+  #formMessage {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1023px) {
+  header {
+    height: 60px;
+    width: 100%;
+  }
+
+  #logo img {
+    width: 35px;
+  }
+
+  #logo span {
+    font-size: 24px;
+  }
+
+  nav a {
+    height: auto;
+    font-size: 24px;
+    margin: 0 10px;
+    border-radius: o;
+    padding: 7px 10px;
+    background: 0;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background: #232323;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+  }
+
+  nav.active {
+    display: flex;
+    transform: translateY(0);
+  }
+
+  #burger-menu {
+    display: block;
+  }
+
+  #search-field {
+    padding: 5px 10px;
+    font-size: 24px;
+    border-radius: 15px;
+  }
+
+  #toggle-theme {
+    padding: 5px 10px;
+    font-size: 24px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+  }
+
+  .nav-list {
+    padding-left: 0;
+  }
+
+  .nav-list li {
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .nav-list i {
+    font-size: 26px;
+  }
+
+  .nav-list a {
+    font-size: 26px;
+  }
+
+  .socnet {
+    margin: 30px;
+  }
+
+  .sn-image {
+    max-width: 100px;
+  }
+
+  #footer-info {
+    font-size: 24px;
+    margin-top: 20px;
+  }
+
+  .footer-box {
+    max-width: 95%;
+    margin: 0 auto;
+  }
+
+  .left-section,
+  .right-section {
+    width: 48%;
+  }
+
+  .left-section p {
+    margin: 0;
+  }
+
+  .right-section h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+
+  #contactForm label {
+    margin-bottom: 5px;
+    font-size: 24px;
+  }
+
+  #contactForm input,
+  #contactForm textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    height: auto;
+  }
+
+  #contactForm button {
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 22px;
+  }
+
+  #contactForm textarea {
+    resize: vertical;
+    min-height: 300px;
+  }
+
+  #formMessage {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+}
+
+@media (min-width: 870px) and (max-width: 999px) {
+  body {
+    width: 115%;
+  }
+
+  header {
+    height: 70px;
+  }
+
+  #logo img {
+    width: 40px;
+  }
+
+  #logo span {
+    font-size: 26px;
+  }
+
+  nav a {
+    height: auto;
+    font-size: 24px;
+    margin: 0 10px;
+    border-radius: o;
+    padding: 7px 10px;
+    background: 0;
+    margin-bottom: 10px;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background: #232323;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+  }
+
+  nav.active {
+    display: flex;
+    transform: translateY(0);
+  }
+
+  #burger-menu {
+    display: block;
+  }
+
+  #search-field {
+    padding: 5px 10px;
+    font-size: 24px;
+    border-radius: 15px;
+  }
+
+  #toggle-theme {
+    padding: 5px 10px;
+    margin-left: 20px;
+    font-size: 24px;
+    border-radius: 15px;
+  }
+
+  .nav-list {
+    padding-left: 0;
+  }
+
+  .nav-list li {
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .nav-list i {
+    font-size: 26px;
+  }
+
+  .nav-list a {
+    font-size: 26px;
+  }
+
+  .socnet {
+    margin: 30px;
+  }
+
+  .sn-image {
+    max-width: 100px;
+  }
+
+  #footer-info {
+    font-size: 24px;
+    margin-top: 20px;
+  }
+
+  .footer-box {
+    max-width: 95%;
+    margin: 0 auto;
+  }
+
+  .left-section,
+  .right-section {
+    width: 48%;
+  }
+
+  .left-section p {
+    margin: 0;
+  }
+
+  .right-section h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+
+  #contactForm label {
+    margin-bottom: 5px;
+    font-size: 24px;
+  }
+
+  #contactForm input,
+  #contactForm textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    height: auto;
+  }
+
+  #contactForm button {
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 22px;
+  }
+
+  #contactForm textarea {
+    resize: vertical;
+    min-height: 300px;
+  }
+
+  #formMessage {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 869px) {
+  body {
+    width: 125%;
+  }
+
+  header {
+    height: 80px;
+  }
+
+  #logo img {
+    width: 45px;
+  }
+
+  #logo span {
+    font-size: 30px;
+  }
+
+  nav a {
+    height: auto;
+    font-size: 28px;
+    margin: 0 10px;
+    border-radius: o;
+    padding: 7px 10px;
+    background: 0;
+    margin-bottom: 15px;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background: #232323;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+  }
+
+  nav.active {
+    display: flex;
+    transform: translateY(0);
+  }
+
+  #burger-menu {
+    display: block;
+  }
+
+  #search-field {
+    padding: 5px 10px;
+    font-size: 28px;
+    border-radius: 15px;
+  }
+
+  #toggle-theme {
+    padding: 5px 10px;
+    margin-left: 20px;
+    font-size: 28px;
+    border-radius: 15px;
+  }
+
+  .nav-list {
+    padding-left: 0;
+  }
+
+  .nav-list li {
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .nav-list i {
+    font-size: 26px;
+  }
+
+  .nav-list a {
+    font-size: 26px;
+  }
+
+  .socnet {
+    margin: 30px;
+  }
+
+  .sn-image {
+    max-width: 100px;
+  }
+
+  #footer-info {
+    font-size: 24px;
+    margin-top: 20px;
+  }
+
+  .footer-box {
+    max-width: 95%;
+    margin: 0 auto;
+  }
+
+  .left-section,
+  .right-section {
+    width: 48%;
+  }
+
+  .left-section p {
+    margin: 0;
+  }
+
+  .right-section h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+
+  #contactForm label {
+    margin-bottom: 5px;
+    font-size: 24px;
+  }
+
+  #contactForm input,
+  #contactForm textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    height: auto;
+  }
+
+  #contactForm button {
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 22px;
+  }
+
+  #contactForm textarea {
+    resize: vertical;
+    min-height: 300px;
+  }
+
+  #formMessage {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 767px) {
+  body {
+    width: 135%;
+  }
+
+  header {
+    height: 100px;
+  }
+
+  #logo img {
+    width: 50px;
+  }
+
+  #logo span {
+    font-size: 28px;
+  }
+
+  nav a {
+    height: 60px;
+    font-size: 28px;
+    margin: 0 10px;
+    border-radius: 0;
+    padding: 10px 10px;
+    background: none;
+  }
+
+  #search-field {
+    padding: 5px 10px;
+    font-size: 20px;
+    border-radius: 15px;
+  }
+
+  #toggle-theme {
+    padding: 5px 10px;
+    margin-left: 20px;
+    font-size: 20px;
+    border-radius: 15px;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background: #232323;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+  }
+
+  nav.active {
+    display: flex;
+    transform: translateY(0);
+  }
+
+  #burger-menu {
+    display: block;
+  }
+
+  #hero {
+    height: 120vh;
+  }
+
+  .nav-list {
+    padding-left: 0;
+  }
+
+  .nav-list li {
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .nav-list i {
+    font-size: 26px;
+  }
+
+  .nav-list a {
+    font-size: 26px;
+  }
+
+  .socnet {
+    margin: 30px;
+  }
+
+  .sn-image {
+    max-width: 100px;
+  }
+
+  #footer-info {
+    font-size: 24px;
+    margin-top: 20px;
+  }
+
+  .footer-box {
+    max-width: 95%;
+    margin: 0 auto;
+  }
+
+  .left-section,
+  .right-section {
+    width: 48%;
+  }
+
+  .left-section p {
+    margin: 0;
+  }
+
+  .right-section h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+
+  #contactForm label {
+    margin-bottom: 5px;
+    font-size: 24px;
+  }
+
+  #contactForm input,
+  #contactForm textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    height: auto;
+  }
+
+  #contactForm button {
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 22px;
+  }
+
+  #contactForm textarea {
+    resize: vertical;
+    min-height: 300px;
+  }
+
+  #formMessage {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+}
+
+@media (min-width: 425px) and (max-width: 639px) {
+  body {
+    width: 125%;
+  }
+
+  header {
+    height: 100px;
+  }
+
+  #logo img {
+    width: 35px;
+  }
+
+  #logo span {
+    font-size: 30px;
+  }
+
+  nav a {
+    height: auto;
+    font-size: 32px;
+    margin: 0 10px;
+    border-radius: o;
+    padding: 7px 10px;
+    background: 0;
+    margin-bottom: 15px;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background: #232323;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+  }
+
+  nav.active {
+    display: flex;
+    transform: translateY(0);
+  }
+
+  #burger-menu {
+    display: block;
+    font-size: 30px;
+  }
+
+  #search-field {
+    padding: 5px 10px;
+    font-size: 32px;
+    border-radius: 15px;
+  }
+
+  #toggle-theme {
+    padding: 5px 10px;
+    margin-left: 20px;
+    font-size: 32px;
+    border-radius: 15px;
+  }
+
+  .nav-list {
+    padding-left: 0;
+  }
+
+  .nav-list li {
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .nav-list i {
+    font-size: 26px;
+  }
+
+  .nav-list a {
+    font-size: 26px;
+  }
+
+  .socnet {
+    margin: 30px;
+  }
+
+  .sn-image {
+    max-width: 100px;
+  }
+
+  #footer-info {
+    font-size: 24px;
+    margin-top: 20px;
+  }
+
+  .footer-box {
+    max-width: 95%;
+    margin: 0 auto;
+    flex-direction: column;
+  }
+
+  .left-section,
+  .right-section {
+    width: 100%;
+  }
+
+  .left-section p {
+    margin: 0;
+  }
+
+  .right-section h2 {
+    margin-top: 40px;
+    margin-bottom: 10px;
+    font-size: 22px;
+  }
+
+  #contactForm label {
+    margin-bottom: 5px;
+    font-size: 18px;
+  }
+
+  #contactForm input,
+  #contactForm textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    height: auto;
+  }
+
+  #contactForm button {
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 18px;
+  }
+
+  #contactForm textarea {
+    resize: vertical;
+    min-height: 150px;
+  }
+
+  #formMessage {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+}
+@media (min-width: 320px) and (max-width: 424px) {
+  body {
+    width: 125%;
+  }
+
+  header {
+    height: 100px;
+  }
+
+  #logo img {
+    width: 30px;
+  }
+
+  #logo span {
+    font-size: 25px;
+  }
+
+  nav a {
+    height: auto;
+    font-size: 22px;
+    margin: 0 10px;
+    border-radius: o;
+    padding: 7px 10px;
+    background: 0;
+    margin-bottom: 15px;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background: #232323;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+  }
+
+  nav.active {
+    display: flex;
+    transform: translateY(0);
+  }
+
+  #burger-menu {
+    display: block;
+    font-size: 24px;
+  }
+
+  #search-field {
+    padding: 5px 10px;
+    font-size: 20px;
+    border-radius: 15px;
+  }
+
+  #toggle-theme {
+    padding: 5px 10px;
+    margin-left: 10px;
+    font-size: 20px;
+    border-radius: 15px;
+  }
+
+  .nav-list {
+    padding-left: 0;
+  }
+
+  .nav-list li {
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .nav-list i {
+    font-size: 20px;
+  }
+
+  .nav-list a {
+    font-size: 20px;
+  }
+
+  .socnet {
+    margin: 30px;
+  }
+
+  .sn-image {
+    max-width: 80px;
+  }
+
+  #footer-info {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+
+  .footer-box {
+    max-width: 95%;
+    margin: 0 auto;
+    flex-direction: column;
+  }
+
+  .left-section,
+  .right-section {
+    width: 100%;
+  }
+
+  .left-section p {
+    margin: 0;
+  }
+
+  .right-section h2 {
+    margin-top: 40px;
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+
+  #contactForm label {
+    margin-bottom: 5px;
+    font-size: 18px;
+  }
+
+  #contactForm input,
+  #contactForm textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    height: auto;
+  }
+
+  #contactForm button {
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 18px;
+  }
+
+  #contactForm textarea {
+    resize: vertical;
+    min-height: 150px;
+  }
+
+  #formMessage {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+}
